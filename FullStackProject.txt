@@ -1,0 +1,10 @@
+@@@ 1. Tworzenie proejktu
+// Backend sln
+dotnet new sln
+dotnet new webapi -o NazwaProjektu.Web
+dotnet new classlib -f netcoreapp3.1 -o NazwaProjektu.Data
+dotnet new classlib -f netcoreapp3.1 -o NazwaProjektu.Services
+dotnet new nunit --framework netcoreapp3.1 -o NazwaProjektu.Test
+dotnet sln add NazwaProjektu.Web // i tak samo dla reszty
+
+// Frontend sln - w tym samym folderze co Backend sln
