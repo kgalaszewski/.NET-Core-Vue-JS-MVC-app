@@ -8,3 +8,15 @@ dotnet new nunit --framework netcoreapp3.1 -o NazwaProjektu.Test
 dotnet sln add NazwaProjektu.Web // i tak samo dla reszty
 
 // Frontend sln - w tym samym folderze co Backend sln
+
+
+@@@ 2. Uruchamianie // ctrl + c w terminalu ubija
+// .NET
+1. Otworz terminal w projekcie
+2. dotnet build
+3. dotnet run
+
+
+@@@ 3. EF w VSC
+dotnet ef migrations add nowaMigracja
+dotnet ef database update
