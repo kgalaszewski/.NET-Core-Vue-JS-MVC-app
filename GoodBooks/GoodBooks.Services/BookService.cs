@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using GoodBooks.Data.Database;
 using GoodBooks.Data.Models;
@@ -16,6 +17,8 @@ namespace GoodBooks.Services
 
         public void AddBook(Book book)
         {
+            book.CreatedOn = DateTime.UtcNow;
+            book.UpdatedOn = DateTime.UtcNow;
             db.Add(book);
             db.SaveChanges();
         }
@@ -34,6 +37,16 @@ namespace GoodBooks.Services
         public Book GetBookById(int bookId)
         {
             return db.Books.Find(bookId);
+        }
+
+        public void UpdateBook(Book book)
+        {
+            var bookToUpdate = db.Books.Find(book.Id);
+            bookToUpdate.Author = book.Author;
+            bookToUpdate.Title = book.Title;
+            bookToUpdate.UpdatedOn = DateTime.UtcNow;
+            db.Books.Update(bookToUpdate);
+            db.SaveChanges();
         }
     }
 }

@@ -20,3 +20,5 @@ dotnet sln add NazwaProjektu.Web // i tak samo dla reszty
 @@@ 3. EF w VSC
 dotnet ef migrations add nowaMigracja
 dotnet ef database update
+// JESLI db jest w innym projekcie niz connection string to trzeba tak z poziomu projektu bazowanowego z modelami
+dotnet ef migrations add nazwaMigracji --startup-project nazwaApiZPlikiemJsonowym
